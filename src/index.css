@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,39 @@
 
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .button-primary {
+    @apply inline-flex items-center justify-center px-5 py-3 bg-clinic-primary text-white font-medium rounded-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .glass {
+    @apply backdrop-blur-lg bg-white/80 shadow-lg border border-white/20;
+  }
+
+  .card-modern {
+    @apply rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 transform hover:-translate-y-1;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .navbar-item {
+    @apply relative text-clinic-accent hover:text-clinic-primary font-medium transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-clinic-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .mobile-menu-item {
+    @apply block py-3 px-4 text-clinic-accent hover:text-clinic-primary font-medium transition-all duration-300 hover:bg-blue-50 rounded-lg;
   }
 }
